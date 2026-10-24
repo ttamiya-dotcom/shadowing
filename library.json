@@ -1,0 +1,1080 @@
+{
+ "materials": [
+  {
+   "title": "TED: Inside the Mind of a Master Procrastinator (Tim Urban)",
+   "source": "https://www.youtube.com/watch?v=arj7oStGLkU",
+   "youtube": "arj7oStGLkU",
+   "credit": "TED（CC BY-NC-ND 4.0）。日本語訳: Yasushi Aoki、校正: Ai Tokimatsu",
+   "lang": "en",
+   "duration": 834.9,
+   "created": "2026-10-25",
+   "segments": [
+    {
+     "i": 1,
+     "start": 12.49,
+     "end": 19.4,
+     "text": "So in college, I was a government major, which means I had to write a lot of papers.",
+     "ja": "大学では 政治専攻だったので レポートを沢山 書かなければなりませんでした"
+    },
+    {
+     "i": 2,
+     "start": 19.41,
+     "end": 23.87,
+     "text": "Now, when a normal student writes a paper, they might spread the work out a little like this.",
+     "ja": "普通の学生が レポートを書く場合 作業量はこんな感じに 分布していることでしょう"
+    },
+    {
+     "i": 3,
+     "start": 23.88,
+     "end": 34.9,
+     "text": "So, you know -- you get started maybe a little slowly, but you get enough done in the first week that, with some heavier days later on, everything gets done, things stay civil.",
+     "ja": "これだと — はじめは ゆっくりですが 最初の週 十分に 進めておいて 後半 多少負荷が 高くはなっても 秩序ある状態が 保たれています"
+    },
+    {
+     "i": 4,
+     "start": 35.7,
+     "end": 38.12,
+     "text": "And I would want to do that like that.",
+     "ja": "私だって そんな風に やりたいと思います"
+    },
+    {
+     "i": 5,
+     "start": 38.14,
+     "end": 39.34,
+     "text": "That would be the plan.",
+     "ja": "予定としては"
+    },
+    {
+     "i": 6,
+     "start": 39.35,
+     "end": 46.64,
+     "text": "I would have it all ready to go, but then, actually, the paper would come along, and then I would kind of do this.",
+     "ja": "すぐ取りかかる つもりでいますが 実際にレポートを やる段になると 私の場合 こんな風に なってしまいます"
+    },
+    {
+     "i": 7,
+     "start": 48.61,
+     "end": 51.2,
+     "text": "And that would happen every single paper.",
+     "ja": "毎回こういうことに なるんです"
+    },
+    {
+     "i": 8,
+     "start": 51.49,
+     "end": 57.83,
+     "text": "But then came my 90-page senior thesis, a paper you're supposed to spend a year on.",
+     "ja": "それから90ページの 卒論を書くことになりました １年かけて 書くべきものです"
+    },
+    {
+     "i": 9,
+     "start": 57.84,
+     "end": 61.47,
+     "text": "And I knew for a paper like that, my normal work flow was not an option.",
+     "ja": "いつものようなやり方が 通用しないのは分かっていました"
+    },
+    {
+     "i": 10,
+     "start": 61.49,
+     "end": 62.9,
+     "text": "It was way too big a project.",
+     "ja": "規模が大きすぎます"
+    },
+    {
+     "i": 11,
+     "start": 62.91,
+     "end": 67.61,
+     "text": "So I planned things out, and I decided I kind of had to go something like this.",
+     "ja": "それで計画を立てて こんな感じでやろうと 決めました"
+    },
+    {
+     "i": 12,
+     "start": 67.63,
+     "end": 69.23,
+     "text": "This is how the year would go.",
+     "ja": "１年の計画です"
+    },
+    {
+     "i": 13,
+     "start": 69.25,
+     "end": 77.68,
+     "text": "So I'd start off light, and I'd bump it up in the middle months, and then at the end, I would kick it up into high gear just like a little staircase.",
+     "ja": "はじめは軽く 中間で少し上がり 終盤でスパートをかける なだらかな階段の ような感じです"
+    },
+    {
+     "i": 14,
+     "start": 77.69,
+     "end": 80.06,
+     "text": "How hard could it be to walk up the stairs?",
+     "ja": "この階段を 上っていくのは"
+    },
+    {
+     "i": 15,
+     "start": 80.08,
+     "end": 81.85,
+     "text": "No big deal, right?",
+     "ja": "難しいことでは ないでしょう"
+    },
+    {
+     "i": 16,
+     "start": 82.94,
+     "end": 84.9,
+     "text": "But then, the funniest thing happened.",
+     "ja": "しかし おかしなことが 起きました"
+    },
+    {
+     "i": 17,
+     "start": 84.91,
+     "end": 86.53,
+     "text": "Those first few months?",
+     "ja": "最初の数ヶ月が"
+    },
+    {
+     "i": 18,
+     "start": 86.64,
+     "end": 89.57,
+     "text": "They came and went, and I couldn't quite do stuff.",
+     "ja": "やって来ては 過ぎましたが 何もできませんでした"
+    },
+    {
+     "i": 19,
+     "start": 89.58,
+     "end": 91.74,
+     "text": "So we had an awesome new revised plan.",
+     "ja": "そのため計画は こう変更されます"
+    },
+    {
+     "i": 20,
+     "start": 92.5,
+     "end": 102.89,
+     "text": "And then -- But then those middle months actually went by, and I didn't really write words, and so we were here.",
+     "ja": "それから — 真ん中の期間も 過ぎて行きましたが 書くことができず こういう状態になります"
+    },
+    {
+     "i": 21,
+     "start": 103.35,
+     "end": 107.72,
+     "text": "And then two months turned into one month, which turned into two weeks.",
+     "ja": "さらに２ヶ月が １ヶ月になり それがさらに ２週間になります"
+    },
+    {
+     "i": 22,
+     "start": 107.74,
+     "end": 115.43,
+     "text": "And one day I woke up with three days until the deadline, still not having written a word,",
+     "ja": "ある朝 目覚めると 締め切りまで ３日しかありません まだ一言も 書けておらず"
+    },
+    {
+     "i": 23,
+     "start": 115.44,
+     "end": 122.45,
+     "text": "and so I did the only thing I could: I wrote 90 pages over 72 hours, pulling not one but two all-nighters --",
+     "ja": "選択の余地はありません 90ページの論文を 72時間で書くことになり ２晩連続で 徹夜しました"
+    },
+    {
+     "i": 24,
+     "start": 122.46,
+     "end": 128.37,
+     "text": "humans are not supposed to pull two all-nighters -- sprinted across campus,",
+     "ja": "人間の体は そんなことするように できてはいませんが キャンパスを 全力で駆け抜け"
+    },
+    {
+     "i": 25,
+     "start": 128.38,
+     "end": 131.96,
+     "text": "dove in slow motion, and got it in just at the deadline.",
+     "ja": "時がスローモーションに変わり 締め切りの瞬間に 提出しました"
+    },
+    {
+     "i": 26,
+     "start": 131.97,
+     "end": 134.0,
+     "text": "I thought that was the end of everything.",
+     "ja": "それですべて終わったと 思っていましたが"
+    },
+    {
+     "i": 27,
+     "start": 134.02,
+     "end": 137.4,
+     "text": "But a week later I get a call, and it's the school.",
+     "ja": "１週間後に 電話が来ました 大学からです"
+    },
+    {
+     "i": 28,
+     "start": 137.61,
+     "end": 139.4,
+     "text": "And they say, \"Is this Tim Urban?\"",
+     "ja": "｢ティム・アーバンさんでしょうか？｣"
+    },
+    {
+     "i": 29,
+     "start": 139.41,
+     "end": 140.89,
+     "text": "And I say, \"Yeah.\"",
+     "ja": "｢はい｣"
+    },
+    {
+     "i": 30,
+     "start": 140.9,
+     "end": 143.25,
+     "text": "And they say, \"We need to talk about your thesis.\"",
+     "ja": "｢提出された論文について お話しがあります｣"
+    },
+    {
+     "i": 31,
+     "start": 143.26,
+     "end": 144.83,
+     "text": "And I say, \"OK.\"",
+     "ja": "｢はあ｣"
+    },
+    {
+     "i": 32,
+     "start": 145.32,
+     "end": 149.43,
+     "text": "And they say, \"It's the best one we've ever seen.\"",
+     "ja": "それで言われたのは ｢あんな素晴らしい卒論は 見たことがありません｣"
+    },
+    {
+     "i": 33,
+     "start": 156.79,
+     "end": 158.55,
+     "text": "That did not happen.",
+     "ja": "なんてことは 起こりませんでした"
+    },
+    {
+     "i": 34,
+     "start": 160.28,
+     "end": 163.36,
+     "text": "It was a very, very bad thesis.",
+     "ja": "まったく酷い論文でした"
+    },
+    {
+     "i": 35,
+     "start": 165.23,
+     "end": 171.71,
+     "text": "I just wanted to enjoy that one moment when all of you thought, \"This guy is amazing!\"",
+     "ja": "一瞬でいいから みんなに 「この人 天才じゃない？」って 思われたかっただけです"
+    },
+    {
+     "i": 36,
+     "start": 172.65,
+     "end": 174.77,
+     "text": "No, no, it was very, very bad.",
+     "ja": "まったく酷い論文です"
+    },
+    {
+     "i": 37,
+     "start": 175.19,
+     "end": 178.75,
+     "text": "Anyway, today I'm a writer-blogger guy.",
+     "ja": "現在の私は 物書きで ｢Wait But Why｣(だけど何で？) という ブログを書いています"
+    },
+    {
+     "i": 38,
+     "start": 178.76,
+     "end": 180.52,
+     "text": "I write the blog Wait But Why.",
+     "ja": "（前の文の訳に含まれています）"
+    },
+    {
+     "i": 39,
+     "start": 180.53,
+     "end": 184.28,
+     "text": "And a couple of years ago, I decided to write about procrastination.",
+     "ja": "２年ほど前に｢先延ばし｣について 書こうと決めました"
+    },
+    {
+     "i": 40,
+     "start": 184.29,
+     "end": 194.89,
+     "text": "My behavior has always perplexed the non-procrastinators around me, and I wanted to explain to the non-procrastinators of the world what goes on in the heads of procrastinators, and why we are the way we are.",
+     "ja": "私の振る舞いが いつも 周りの人を困惑させていたので 先延ばし屋の頭の中で 何が起きていて 私たちがなぜ そんな風なのか 世の先延ばし屋でない人たちに 説明したいと思ったんです"
+    },
+    {
+     "i": 41,
+     "start": 194.91,
+     "end": 201.23,
+     "text": "Now, I had a hypothesis that the brains of procrastinators were actually different than the brains of other people.",
+     "ja": "先延ばし屋の脳と そうでない人の脳には きっと違いが あるはずだと思い"
+    },
+    {
+     "i": 42,
+     "start": 201.55,
+     "end": 210.48,
+     "text": "And to test this, I found an MRI lab that actually let me scan both my brain and the brain of a proven non-procrastinator, so I could compare them.",
+     "ja": "それを確認するため 私の脳と 先延ばし屋でないことが 確かな人の脳の MRIを取ってくれる 所を見つけ 比較してみる ことにしました"
+    },
+    {
+     "i": 43,
+     "start": 210.5,
+     "end": 212.71,
+     "text": "I actually brought them here to show you today.",
+     "ja": "その結果を今日 ここに持ってきています"
+    },
+    {
+     "i": 44,
+     "start": 212.72,
+     "end": 216.27,
+     "text": "I want you to take a look carefully to see if you can notice a difference.",
+     "ja": "違いが分かるか注意して 見てほしいと思います"
+    },
+    {
+     "i": 45,
+     "start": 216.28,
+     "end": 220.89,
+     "text": "I know that if you're not a trained brain expert, it's not that obvious, but just take a look, OK?",
+     "ja": "脳の専門家でもなければ 分かりにくい違いですが まあ とにかく 見てみてください"
+    },
+    {
+     "i": 46,
+     "start": 220.91,
+     "end": 223.35,
+     "text": "So here's the brain of a non-procrastinator.",
+     "ja": "これが先延ばし屋では ない人の脳です"
+    },
+    {
+     "i": 47,
+     "start": 225.98,
+     "end": 227.58,
+     "text": "Now ...",
+     "ja": "これに対し"
+    },
+    {
+     "i": 48,
+     "start": 228.17,
+     "end": 229.94,
+     "text": "here's my brain.",
+     "ja": "私の脳だと —"
+    },
+    {
+     "i": 49,
+     "start": 235.56,
+     "end": 237.58,
+     "text": "There is a difference.",
+     "ja": "これが両者の違いです"
+    },
+    {
+     "i": 50,
+     "start": 237.75,
+     "end": 244.98,
+     "text": "Both brains have a Rational Decision-Maker in them, but the procrastinator's brain also has an Instant Gratification Monkey.",
+     "ja": "どちらの脳にも ｢理性的意志決定者｣がいますが 先延ばし屋の脳の場合には それに加えて ｢すぐにご褒美が欲しいおサル｣ がいるんです"
+    },
+    {
+     "i": 51,
+     "start": 244.99,
+     "end": 247.3,
+     "text": "Now, what does this mean for the procrastinator?",
+     "ja": "それが先延ばしに どう関わるのか？"
+    },
+    {
+     "i": 52,
+     "start": 247.32,
+     "end": 250.07,
+     "text": "Well, it means everything's fine until this happens.",
+     "ja": "万事は順調です こうなるまでは"
+    },
+    {
+     "i": 53,
+     "start": 252.29,
+     "end": 259.27,
+     "text": "So the Rational Decision-Maker will make the rational decision to do something productive, but the Monkey doesn't like that plan,",
+     "ja": "理性的意志決定者は 何か生産的なことをするという 理性的決断をしますが おサルはそれが 気に入りません"
+    },
+    {
+     "i": 54,
+     "start": 259.28,
+     "end": 268.32,
+     "text": "so he actually takes the wheel, and he says, \"Actually, let's read the entire Wikipedia page of the Nancy Kerrigan/ Tonya Harding scandal, because I just remembered that that happened.",
+     "ja": "それで舵を横取りして 言うのです ｢そうだ ナンシー・ケリガンと トーニャ・ハーディングの 事件に関する ウィキペディアの記事を読もう そんなことがあったのを 思い出したから"
+    },
+    {
+     "i": 55,
+     "start": 268.93,
+     "end": 276.48,
+     "text": "Then -- Then we're going to go over to the fridge, to see if there's anything new in there since 10 minutes ago.",
+     "ja": "それから — 冷蔵庫を調べに行って 10分前から何か変わっている ことがないか確認しなきゃ"
+    },
+    {
+     "i": 56,
+     "start": 276.49,
+     "end": 287.36,
+     "text": "After that, we're going to go on a YouTube spiral that starts with videos of Richard Feynman talking about magnets and ends much, much later with us watching interviews with Justin Bieber's mom.",
+     "ja": "そのあとは YouTubeスパイラルが待っている リチャード･ファインマンが 磁石について語るビデオから始って ずーっと後の ジャスティン･ビーバーのママの インタビューまで見るんだ"
+    },
+    {
+     "i": 57,
+     "start": 289.15,
+     "end": 294.58,
+     "text": "\"All of that's going to take a while, so we're not going to really have room on the schedule for any work today.",
+     "ja": "それで当分 手一杯だから 悪いけど 今日はもう 仕事を入れる 余裕なんてないね｣"
+    },
+    {
+     "i": 58,
+     "start": 294.6,
+     "end": 296.07,
+     "text": "Sorry!\"",
+     "ja": "（前の文の訳に含まれています）"
+    },
+    {
+     "i": 59,
+     "start": 298.18,
+     "end": 301.99,
+     "text": "Now, what is going on here?",
+     "ja": "何が起きているんでしょう？"
+    },
+    {
+     "i": 60,
+     "start": 303.33,
+     "end": 307.45,
+     "text": "The Instant Gratification Monkey does not seem like a guy you want behind the wheel.",
+     "ja": "おサルは 舵取りをして欲しい 相手ではありません"
+    },
+    {
+     "i": 61,
+     "start": 307.46,
+     "end": 309.42,
+     "text": "He lives entirely in the present moment.",
+     "ja": "今の瞬間だけに 生きています"
+    },
+    {
+     "i": 62,
+     "start": 309.43,
+     "end": 316.0,
+     "text": "He has no memory of the past, no knowledge of the future, and he only cares about two things: easy and fun.",
+     "ja": "過去の記憶も 未来についての知識もなく 気にかけるのは ただ２つ ラクで楽しいことだけ"
+    },
+    {
+     "i": 63,
+     "start": 316.19,
+     "end": 319.43,
+     "text": "Now, in the animal world, that works fine.",
+     "ja": "動物の世界であれば それで問題はありません"
+    },
+    {
+     "i": 64,
+     "start": 319.44,
+     "end": 325.75,
+     "text": "If you're a dog and you spend your whole life doing nothing other than easy and fun things, you're a huge success!",
+     "ja": "犬であれば ずっとラクで楽しいことだけ やって過ごすのは 大成功の生き方でしょう"
+    },
+    {
+     "i": 65,
+     "start": 327.25,
+     "end": 332.06,
+     "text": "And to the Monkey, humans are just another animal species.",
+     "ja": "おサルにとっては 人間も動物の一種に 過ぎません"
+    },
+    {
+     "i": 66,
+     "start": 332.07,
+     "end": 338.9,
+     "text": "You have to keep well-slept, well-fed and propagating into the next generation, which in tribal times might have worked OK.",
+     "ja": "よく食べ よく眠り 次の世代を 生み出しさえすればいい 原始生活をしていた頃は それでも良かったかもしれませんが"
+    },
+    {
+     "i": 67,
+     "start": 338.92,
+     "end": 341.78,
+     "text": "But, if you haven't noticed, now we're not in tribal times.",
+     "ja": "今や原始生活をしている わけではありません"
+    },
+    {
+     "i": 68,
+     "start": 341.79,
+     "end": 345.93,
+     "text": "We're in an advanced civilization, and the Monkey does not know what that is.",
+     "ja": "我々は進んだ文明社会にいますが おサルにはそれが何か分かっていません"
+    },
+    {
+     "i": 69,
+     "start": 345.95,
+     "end": 353.68,
+     "text": "Which is why we have another guy in our brain, the Rational Decision-Maker, who gives us the ability to do things no other animal can do.",
+     "ja": "脳にもう１人 ｢理性的意志決定者｣が いるのはそのためで 他の動物にはない能力を 与えてくれます"
+    },
+    {
+     "i": 70,
+     "start": 353.69,
+     "end": 355.62,
+     "text": "We can visualize the future.",
+     "ja": "私たちは未来を想像し"
+    },
+    {
+     "i": 71,
+     "start": 355.64,
+     "end": 357.4,
+     "text": "We can see the big picture.",
+     "ja": "大局を見ることができ"
+    },
+    {
+     "i": 72,
+     "start": 357.41,
+     "end": 358.77,
+     "text": "We can make long-term plans.",
+     "ja": "長期的計画を 立てられます"
+    },
+    {
+     "i": 73,
+     "start": 358.79,
+     "end": 361.58,
+     "text": "And he wants to take all of that into account.",
+     "ja": "理性的意志決定者は すべてのことを考慮に入れ"
+    },
+    {
+     "i": 74,
+     "start": 361.99,
+     "end": 366.8,
+     "text": "And he wants to just have us do whatever makes sense to be doing right now.",
+     "ja": "今 自分の為すべきことを やらせようとします"
+    },
+    {
+     "i": 75,
+     "start": 366.81,
+     "end": 374.29,
+     "text": "Now, sometimes it makes sense to be doing things that are easy and fun, like when you're having dinner or going to bed or enjoying well-earned leisure time.",
+     "ja": "ラクで楽しいことを するのが 理にかなっている こともあります 晩ご飯の時や 眠る時や 余暇の時など"
+    },
+    {
+     "i": 76,
+     "start": 374.31,
+     "end": 375.77,
+     "text": "That's why there's an overlap.",
+     "ja": "両者には 重なる部分があり"
+    },
+    {
+     "i": 77,
+     "start": 375.78,
+     "end": 377.54,
+     "text": "Sometimes they agree.",
+     "ja": "意見が合うことも あります"
+    },
+    {
+     "i": 78,
+     "start": 377.55,
+     "end": 385.57,
+     "text": "But other times, it makes much more sense to be doing things that are harder and less pleasant, for the sake of the big picture.",
+     "ja": "しかし 大局的な判断として 難しくてあまり楽しくない ことをするのが 理にかなう場合もあります"
+    },
+    {
+     "i": 79,
+     "start": 385.58,
+     "end": 387.79,
+     "text": "And that's when we have a conflict.",
+     "ja": "そういうときに 対立が生じます"
+    },
+    {
+     "i": 80,
+     "start": 387.87,
+     "end": 399.96,
+     "text": "And for the procrastinator, that conflict tends to end a certain way every time, leaving him spending a lot of time in this orange zone, an easy and fun place that's entirely out of the Makes Sense circle.",
+     "ja": "先延ばし屋の場合 この対立がいつも ある結果に終わる傾向があり 多くの時間をオレンジ色で示した部分で 過ごすことになります やるのが理にかなわない ラクで楽しいことです"
+    },
+    {
+     "i": 81,
+     "start": 399.97,
+     "end": 402.56,
+     "text": "I call it the Dark Playground.",
+     "ja": "私はこの領域を ｢暗黒の遊び場｣と呼んでいます"
+    },
+    {
+     "i": 82,
+     "start": 403.79,
+     "end": 410.58,
+     "text": "Now, the Dark Playground is a place that all of you procrastinators out there know very well.",
+     "ja": "暗黒の遊び場は — 先延ばし屋がみんな よく知っている場所で"
+    },
+    {
+     "i": 83,
+     "start": 410.74,
+     "end": 416.27,
+     "text": "It's where leisure activities happen at times when leisure activities are not supposed to be happening.",
+     "ja": "遊んでいる場合 じゃないときに 遊ぶことになる場所です"
+    },
+    {
+     "i": 84,
+     "start": 416.27,
+     "end": 426.5,
+     "text": "The fun you have in the Dark Playground isn't actually fun, because it's completely unearned, and the air is filled with guilt, dread, anxiety, self-hatred -- all of those good procrastinator feelings.",
+     "ja": "暗黒の遊び場での楽しみは 実際に楽しくはありません それは得るべきではない 楽しみで 罪悪感 怖れ 不安 自己嫌悪といった お馴染みの 先延ばしの感覚に 満ちています"
+    },
+    {
+     "i": 85,
+     "start": 426.55,
+     "end": 437.1,
+     "text": "And the question is, in this situation, with the Monkey behind the wheel, how does the procrastinator ever get himself over here to this blue zone, a less pleasant place, but where really important things happen?",
+     "ja": "問題は おサルが 舵を取っている状況で 先延ばし屋は いかにして青い領域 快適さは劣るが本当に重要なことが 起きる場所に 移れるかということです"
+    },
+    {
+     "i": 86,
+     "start": 437.11,
+     "end": 449.27,
+     "text": "Well, turns out the procrastinator has a guardian angel, someone who's always looking down on him and watching over him in his darkest moments -- someone called the Panic Monster.",
+     "ja": "実は先延ばし屋には 守護天使がいて いつも見守って くれています 最悪の時だろうとも それは｢パニック･モンスター｣とも 呼ばれています"
+    },
+    {
+     "i": 87,
+     "start": 454.24,
+     "end": 467.78,
+     "text": "Now, the Panic Monster is dormant most of the time, but he suddenly wakes up anytime a deadline gets too close or there's danger of public embarrassment, a career disaster or some other scary consequence.",
+     "ja": "パニック・モンスターは ほとんどの場合 眠っていますが 締め切りが迫る 面目を失いそう 職業上の危機といった 恐ろしい結末が 近づいているとき 突然目を覚まします"
+    },
+    {
+     "i": 88,
+     "start": 467.79,
+     "end": 471.97,
+     "text": "And importantly, he's the only thing the Monkey is terrified of.",
+     "ja": "重要なのは それがおサルの唯一 恐れるものだということです"
+    },
+    {
+     "i": 89,
+     "start": 471.98,
+     "end": 482.19,
+     "text": "Now, he became very relevant in my life pretty recently, because the people of TED reached out to me about six months ago and invited me to do a TED Talk.",
+     "ja": "ごく最近 私はそのお世話に なることがありました 半年前にTEDの人たちが コンタクトしてきて TEDトークをしてみないかと 誘われたのです"
+    },
+    {
+     "i": 90,
+     "start": 486.91,
+     "end": 488.96,
+     "text": "Now, of course, I said yes.",
+     "ja": "もちろん｢やります｣と答えました"
+    },
+    {
+     "i": 91,
+     "start": 488.98,
+     "end": 493.09,
+     "text": "It's always been a dream of mine to have done a TED Talk in the past.",
+     "ja": "「昔TEDトークをしたことがある」と言える ようになるのが 長年の夢だったんです"
+    },
+    {
+     "i": 92,
+     "start": 504.05,
+     "end": 509.5,
+     "text": "But in the middle of all this excitement, the Rational Decision-Maker seemed to have something else on his mind.",
+     "ja": "この興奮のさなかにあって 理性的意志決定者は 別のことを気にかけています"
+    },
+    {
+     "i": 93,
+     "start": 509.51,
+     "end": 512.07,
+     "text": "He was saying, \"Are we clear on what we just accepted?",
+     "ja": "｢何を引き受けたか 分かってる？"
+    },
+    {
+     "i": 94,
+     "start": 512.08,
+     "end": 515.34,
+     "text": "Do we get what's going to be now happening one day in the future?",
+     "ja": "将来のある日に起きることが何か 分かってんの？"
+    },
+    {
+     "i": 95,
+     "start": 515.35,
+     "end": 517.63,
+     "text": "We need to sit down and work on this right now.\"",
+     "ja": "今すぐ腰を据えて 取りかからないと！｣"
+    },
+    {
+     "i": 96,
+     "start": 517.64,
+     "end": 524.11,
+     "text": "And the Monkey said, \"Totally agree, but let's just open Google Earth and zoom in to the bottom of India, like 200 feet above the ground,",
+     "ja": "おサルが それに答えます ｢まったく賛成だけど 取りあえず Googleアースを開いて インドの下端を地上60mまで拡大し"
+    },
+    {
+     "i": 97,
+     "start": 524.12,
+     "end": 530.05,
+     "text": "and scroll up for two and a half hours til we get to the top of the country, so we can get a better feel for India.\"",
+     "ja": "２時間半スクロールして 上の端まで行ったら インドのイメージが よく掴めるんじゃないかな｣"
+    },
+    {
+     "i": 98,
+     "start": 535.0,
+     "end": 536.93,
+     "text": "So that's what we did that day.",
+     "ja": "それで その日はずっと それをしていました"
+    },
+    {
+     "i": 99,
+     "start": 540.45,
+     "end": 547.62,
+     "text": "As six months turned into four and then two and then one, the people of TED decided to release the speakers.",
+     "ja": "６ヶ月が ４ヶ月になり ２ヶ月になり １ヶ月になり TEDが講演者の一覧を 公開しました"
+    },
+    {
+     "i": 100,
+     "start": 547.63,
+     "end": 551.63,
+     "text": "And I opened up the website, and there was my face staring right back at me.",
+     "ja": "そのページを開くと 見つめ返す自分の顔が そこにありました"
+    },
+    {
+     "i": 101,
+     "start": 551.65,
+     "end": 553.56,
+     "text": "And guess who woke up?",
+     "ja": "それで誰が 目覚めたでしょう？"
+    },
+    {
+     "i": 102,
+     "start": 557.28,
+     "end": 562.95,
+     "text": "So the Panic Monster starts losing his mind, and a few seconds later, the whole system's in mayhem.",
+     "ja": "パニック・モンスターが 半狂乱になり すぐにシステム全体が 大混乱に陥りました"
+    },
+    {
+     "i": 103,
+     "start": 567.36,
+     "end": 571.79,
+     "text": "And the Monkey -- remember, he's terrified of the Panic Monster -- boom, he's up the tree!",
+     "ja": "おサルがパニック・モンスターを 恐れるのを思い出してください それで木の上に 逃げ出します"
+    },
+    {
+     "i": 104,
+     "start": 571.81,
+     "end": 577.33,
+     "text": "And finally, finally, the Rational Decision-Maker can take the wheel and I can start working on the talk.",
+     "ja": "これでようやく 理性的意志決定者が 舵を取れるようになって 私は講演の準備に 取りかかれました"
+    },
+    {
+     "i": 105,
+     "start": 577.34,
+     "end": 583.15,
+     "text": "Now, the Panic Monster explains all kinds of pretty insane procrastinator behavior,",
+     "ja": "パニック･モンスターにより 先延ばし屋の常軌を逸した 振る舞いも説明でき"
+    },
+    {
+     "i": 106,
+     "start": 583.16,
+     "end": 589.37,
+     "text": "like how someone like me could spend two weeks unable to start the opening sentence of a paper,",
+     "ja": "２週間かけて レポートの 出だしの１行も 書けずにいたのが"
+    },
+    {
+     "i": 107,
+     "start": 589.39,
+     "end": 595.59,
+     "text": "and then miraculously find the unbelievable work ethic to stay up all night and write eight pages.",
+     "ja": "奇跡のように強烈な 労働倫理に目覚め 夜通しかけて８ページ書き上げる なんてことも起きるのです"
+    },
+    {
+     "i": 108,
+     "start": 596.24,
+     "end": 601.71,
+     "text": "And this entire situation, with the three characters -- this is the procrastinator's system.",
+     "ja": "これが ３人の登場人物のいる 全体の状況 先延ばし屋のシステムです"
+    },
+    {
+     "i": 109,
+     "start": 601.95,
+     "end": 605.52,
+     "text": "It's not pretty, but in the end, it works.",
+     "ja": "きれいなものではありませんが 最終的には機能します"
+    },
+    {
+     "i": 110,
+     "start": 605.53,
+     "end": 609.61,
+     "text": "This is what I decided to write about on the blog a couple of years ago.",
+     "ja": "これが２年前ブログに 書くことにした内容です"
+    },
+    {
+     "i": 111,
+     "start": 609.62,
+     "end": 612.6,
+     "text": "When I did, I was amazed by the response.",
+     "ja": "書いてみると ブログへの反応に 驚くことになりました"
+    },
+    {
+     "i": 112,
+     "start": 612.61,
+     "end": 619.34,
+     "text": "Literally thousands of emails came in, from all different kinds of people from all over the world, doing all different kinds of things.",
+     "ja": "文字通り何千という メールが 世界中から 寄せられました 実に様々な人々から"
+    },
+    {
+     "i": 113,
+     "start": 619.35,
+     "end": 624.98,
+     "text": "These are people who were nurses, bankers, painters, engineers and lots and lots of PhD students.",
+     "ja": "看護師 銀行員 画家 エンジニア そして実に多くの 大学院生"
+    },
+    {
+     "i": 114,
+     "start": 626.58,
+     "end": 630.99,
+     "text": "And they were all writing, saying the same thing: \"I have this problem too.\"",
+     "ja": "みんな書いている ことは一緒でした ｢自分も同じ問題を抱えています｣"
+    },
+    {
+     "i": 115,
+     "start": 631.0,
+     "end": 636.96,
+     "text": "But what struck me was the contrast between the light tone of the post and the heaviness of these emails.",
+     "ja": "しかし そのブログ記事の軽さと 受け取ったメールの重さは 対照的でした"
+    },
+    {
+     "i": 116,
+     "start": 636.97,
+     "end": 645.21,
+     "text": "These people were writing with intense frustration about what procrastination had done to their lives, about what this Monkey had done to them.",
+     "ja": "先延ばしが彼らの人生に 及ぼしている影響への 強い苛立ちをもって 書かれていたんです おサルのせいで どんな目に遭っているかと"
+    },
+    {
+     "i": 117,
+     "start": 646.75,
+     "end": 653.0,
+     "text": "And I thought about this, and I said, well, if the procrastinator's system works, then what's going on?",
+     "ja": "それを見て思いました 先延ばし屋のシステムは機能するのに どうなっているんだろう？"
+    },
+    {
+     "i": 118,
+     "start": 653.02,
+     "end": 655.51,
+     "text": "Why are all of these people in such a dark place?",
+     "ja": "なぜ彼らはそんな 暗澹とした状態にあるのか？"
+    },
+    {
+     "i": 119,
+     "start": 655.53,
+     "end": 659.14,
+     "text": "Well, it turns out that there's two kinds of procrastination.",
+     "ja": "分かったのは 先延ばしにも ２種類あるということです"
+    },
+    {
+     "i": 120,
+     "start": 659.84,
+     "end": 664.0,
+     "text": "Everything I've talked about today, the examples I've given, they all have deadlines.",
+     "ja": "私の話した例では 締め切りがありました 締め切りがあると"
+    },
+    {
+     "i": 121,
+     "start": 664.01,
+     "end": 670.2,
+     "text": "And when there's deadlines, the effects of procrastination are contained to the short term because the Panic Monster gets involved.",
+     "ja": "先延ばしの影響は 短い期間に限定され パニック・モンスターが 登場します"
+    },
+    {
+     "i": 122,
+     "start": 670.22,
+     "end": 674.79,
+     "text": "But there's a second kind of procrastination that happens in situations when there is no deadline.",
+     "ja": "しかし別の種類の 先延ばしもあって それには締め切りが ありません"
+    },
+    {
+     "i": 123,
+     "start": 674.81,
+     "end": 679.94,
+     "text": "So if you wanted a career where you're a self-starter -- something in the arts, something entrepreneurial --",
+     "ja": "個人事業家や 芸術家のような 起業的な仕事の場合"
+    },
+    {
+     "i": 124,
+     "start": 679.96,
+     "end": 687.41,
+     "text": "there's no deadlines on those things at first, because nothing's happening, not until you've gone out and done the hard work to get momentum, get things going.",
+     "ja": "はじめのうちは 締め切りがありません 出かけていって 何かをし 軌道に乗って 走り出すまでは 何も起こらないからです"
+    },
+    {
+     "i": 125,
+     "start": 687.42,
+     "end": 695.43,
+     "text": "There's also all kinds of important things outside of your career that don't involve any deadlines, like seeing your family or exercising and taking care of your health,",
+     "ja": "また仕事以外で 大切なことには 締め切りのないものが たくさんあります 家族に会いに行くとか 運動し健康を保つとか"
+    },
+    {
+     "i": 126,
+     "start": 695.44,
+     "end": 699.56,
+     "text": "working on your relationship or getting out of a relationship that isn't working.",
+     "ja": "人間関係を築くとか うまくいかない関係を 解消するとか"
+    },
+    {
+     "i": 127,
+     "start": 699.58,
+     "end": 711.12,
+     "text": "Now if the procrastinator's only mechanism of doing these hard things is the Panic Monster, that's a problem, because in all of these non-deadline situations, the Panic Monster doesn't show up.",
+     "ja": "先延ばし屋がこういった難しいことを するためのメカニズムが パニック・モンスターだけだったとすると 問題があります 締め切りがない状況では パニック・モンスターは 現れないからです"
+    },
+    {
+     "i": 128,
+     "start": 711.13,
+     "end": 717.38,
+     "text": "He has nothing to wake up for, so the effects of procrastination, they're not contained; they just extend outward forever.",
+     "ja": "目覚めさせるものがなく 先延ばしの影響が 限定されず いつまでも 先延ばしし続ける ことになります"
+    },
+    {
+     "i": 129,
+     "start": 717.8,
+     "end": 726.72,
+     "text": "And it's this long-term kind of procrastination that's much less visible and much less talked about than the funnier, short-term deadline-based kind.",
+     "ja": "そのような長期的な類の 先延ばしは 滑稽で短期的な 締め切りのある先延ばしに比べ 目に付きにくく 語られることもありません"
+    },
+    {
+     "i": 130,
+     "start": 726.73,
+     "end": 730.15,
+     "text": "It's usually suffered quietly and privately.",
+     "ja": "通常 ひとり静かに 苛まれることになり"
+    },
+    {
+     "i": 131,
+     "start": 730.67,
+     "end": 736.03,
+     "text": "And it can be the source of a huge amount of long-term unhappiness, and regrets.",
+     "ja": "長期的で大きな 不幸や後悔の 源になり得ます"
+    },
+    {
+     "i": 132,
+     "start": 736.43,
+     "end": 741.97,
+     "text": "And I thought, that's why those people are emailing, and that's why they're in such a bad place.",
+     "ja": "それが あの人たちが メールを書いた理由であり そんな酷い状況にある 理由なんだと思いました"
+    },
+    {
+     "i": 133,
+     "start": 741.99,
+     "end": 744.74,
+     "text": "It's not that they're cramming for some project.",
+     "ja": "何かのプロジェクトで缶詰に なっているわけではありません"
+    },
+    {
+     "i": 134,
+     "start": 744.75,
+     "end": 750.44,
+     "text": "It's that long-term procrastination has made them feel like a spectator, at times, in their own lives.",
+     "ja": "長期的な先延ばしは 自分の人生に対し 傍観者のように感じさせます"
+    },
+    {
+     "i": 135,
+     "start": 750.44,
+     "end": 756.69,
+     "text": "The frustration is not that they couldn't achieve their dreams; it's that they weren't even able to start chasing them.",
+     "ja": "彼らの苛立ちは 夢を実現できないことではなく 夢を追い始めることさえ できずにいることなのです"
+    },
+    {
+     "i": 136,
+     "start": 756.7,
+     "end": 765.83,
+     "text": "So I read these emails and I had a little bit of an epiphany -- that I don't think non-procrastinators exist.",
+     "ja": "そういうメールを読んでいて ひらめいたことがあります 先延ばし屋でない人なんて いないということです"
+    },
+    {
+     "i": 137,
+     "start": 765.83,
+     "end": 769.51,
+     "text": "That's right -- I think all of you are procrastinators.",
+     "ja": "みんな先延ばし屋なんです"
+    },
+    {
+     "i": 138,
+     "start": 769.75,
+     "end": 778.08,
+     "text": "Now, you might not all be a mess, like some of us, and some of you may have a healthy relationship with deadlines,",
+     "ja": "私みたいにメチャクチャでは ないにしても 締め切りと健全な関係を 保てているかもしれません"
+    },
+    {
+     "i": 139,
+     "start": 778.09,
+     "end": 782.79,
+     "text": "but remember: the Monkey's sneakiest trick is when the deadlines aren't there.",
+     "ja": "でも おサルの問題が 一番嫌らしいのは 締め切りがない時だということに 気を付けてください"
+    },
+    {
+     "i": 140,
+     "start": 783.1,
+     "end": 785.28,
+     "text": "Now, I want to show you one last thing.",
+     "ja": "最後に１つ お見せしたいものがあります"
+    },
+    {
+     "i": 141,
+     "start": 785.29,
+     "end": 787.98,
+     "text": "I call this a Life Calendar.",
+     "ja": "｢人生カレンダー｣です"
+    },
+    {
+     "i": 142,
+     "start": 788.2,
+     "end": 792.93,
+     "text": "That's one box for every week of a 90-year life.",
+     "ja": "それぞれの箱は 90年の人生における 各週にあたります"
+    },
+    {
+     "i": 143,
+     "start": 793.2,
+     "end": 798.23,
+     "text": "That's not that many boxes, especially since we've already used a bunch of those.",
+     "ja": "そんなに沢山ある わけではありません おまけに私たちはもう かなり使っていますから"
+    },
+    {
+     "i": 144,
+     "start": 798.46,
+     "end": 804.04,
+     "text": "So I think we need to all take a long, hard look at that calendar.",
+     "ja": "私たちはみんな このカレンダーを じっくり眺めてみるべきだと思います"
+    },
+    {
+     "i": 145,
+     "start": 804.83,
+     "end": 811.68,
+     "text": "We need to think about what we're really procrastinating on, because everyone is procrastinating on something in life.",
+     "ja": "自分が本当に先延ばし していることは何なのか 誰でも何かは先延ばし しているはずだからです"
+    },
+    {
+     "i": 146,
+     "start": 812.63,
+     "end": 816.11,
+     "text": "We need to stay aware of the Instant Gratification Monkey.",
+     "ja": "すぐにご褒美が欲しいおサルのことを 意識している必要があります"
+    },
+    {
+     "i": 147,
+     "start": 817.31,
+     "end": 820.25,
+     "text": "That's a job for all of us.",
+     "ja": "これは我々みんなに とっての仕事です"
+    },
+    {
+     "i": 148,
+     "start": 820.52,
+     "end": 825.28,
+     "text": "And because there's not that many boxes on there, it's a job that should probably start today.",
+     "ja": "箱がそんなに沢山は ないことを考えると この仕事は 今日にでも 始めるべきでしょう"
+    },
+    {
+     "i": 149,
+     "start": 825.3,
+     "end": 828.61,
+     "text": "Well, maybe not today, but ...",
+     "ja": "まあ 今日すぐじゃ ないにしても"
+    },
+    {
+     "i": 150,
+     "start": 829.85,
+     "end": 831.43,
+     "text": "You know.",
+     "ja": "できれば"
+    },
+    {
+     "i": 151,
+     "start": 831.43,
+     "end": 833.03,
+     "text": "Sometime soon.",
+     "ja": "遠くないうちに"
+    },
+    {
+     "i": 152,
+     "start": 833.24,
+     "end": 834.85,
+     "text": "Thank you.",
+     "ja": "ありがとうございました"
+    }
+   ],
+   "id": "ted-tim-urban-procrastination"
+  }
+ ]
+}

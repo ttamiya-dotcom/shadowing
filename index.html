@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<meta name="apple-mobile-web-app-title" content="シャドーイング">
+<title>YouTube シャドーイング</title>
+<link rel="icon" type="image/png" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: 1列の練習帳。上に教材、その下に動画（スクロールしても上に残る）、設定、文のリスト。画面下に常に操作バー */
+:root {
+  color-scheme: light;
+  --paper: #f5f8f7;
+  --card: #ffffff;
+  --ink: #17282a;
+  --muted: #5b6d6c;
+  --line: #d9e2e0;
+  --accent: #0d6a75;
+  --accent-soft: #e2f0f1;
+  --turn: #b8740a;
+  --turn-soft: #fbf0dc;
+  --warn: #9a3b12;
+  --en: "Atkinson Hyperlegible", "Helvetica Neue", Arial, sans-serif;
+  --ja: "Zen Kaku Gothic New", "Hiragino Sans", "Yu Gothic", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  --bar-h: 132px;
+  --vid-h: 0px;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--paper); color: var(--ink); }
+body { font-family: var(--ja); font-size: 15px; line-height: 1.6; padding-top: env(safe-area-inset-top, 0px); -webkit-text-size-adjust: 100%; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--paper); }
+
+.wrap {
+  max-width: 760px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 20px calc(var(--bar-h) + 32px + env(safe-area-inset-bottom, 0px));
+  display: grid; gap: 16px;
+}
+
+header { display: grid; gap: 10px; }
+.eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: .14em; color: var(--accent); text-transform: uppercase; }
+h1 { margin: 0; font-size: 24px; font-weight: 700; text-wrap: balance; }
+.pick { display: grid; gap: 4px; }
+.pick label { font-size: 12px; color: var(--muted); }
+select {
+  font: inherit; font-weight: 500; color: var(--ink); background: var(--card);
+  border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; width: 100%;
+}
+.meta { margin: 0; font-family: var(--mono); font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.credit { margin: 0; font-size: 12px; color: var(--muted); overflow-wrap: anywhere; }
+.credit a { color: var(--accent); }
+.note { margin: 0; font-size: 13px; color: var(--warn); background: var(--turn-soft); border-radius: 8px; padding: 8px 12px; }
+
+.video {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 4;
+  background: var(--paper); padding-block: 6px;
+  margin-inline: calc(-1 * max(16px, env(safe-area-inset-left, 0px))) calc(-1 * max(16px, env(safe-area-inset-right, 0px)));
+  padding-inline: max(16px, env(safe-area-inset-left, 0px)) max(16px, env(safe-area-inset-right, 0px));
+}
+.frame {
+  width: min(100%, calc(40vh * 16 / 9)); max-width: 100%; aspect-ratio: 16 / 9; margin: 0 auto;
+  background: #0b1416; border-radius: 10px; overflow: hidden;
+}
+.frame iframe, .frame > div { width: 100%; height: 100%; border: 0; display: block; }
+
+details.settings {
+  background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 0 16px;
+}
+details.settings summary {
+  cursor: pointer; padding: 12px 0; font-size: 13px; font-weight: 700; color: var(--accent); list-style: none;
+  display: flex; justify-content: space-between; align-items: center; gap: 12px;
+}
+details.settings summary::-webkit-details-marker { display: none; }
+details.settings summary::after { content: "開く"; font-size: 12px; font-weight: 400; color: var(--muted); }
+details.settings[open] summary::after { content: "閉じる"; }
+.set-in { display: grid; gap: 12px; padding-bottom: 14px; }
+.row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; }
+.row > .lab { font-size: 12px; color: var(--muted); min-width: 6.5em; }
+.seg { display: inline-flex; flex-wrap: wrap; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.seg button {
+  font: inherit; font-size: 13px; color: var(--ink); background: transparent; border: 0;
+  padding: 6px 11px; cursor: pointer; border-right: 1px solid var(--line); font-variant-numeric: tabular-nums;
+}
+.seg button:last-child { border-right: 0; }
+.seg button[aria-pressed="true"] { background: var(--accent); color: #fff; }
+.seg button:focus-visible, .ctrl:focus-visible, .sent:focus-visible, select:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.toggles { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 13px; }
+.toggles label { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; }
+.toggles input { accent-color: var(--accent); width: 16px; height: 16px; }
+.hint { margin: 0; font-size: 12px; color: var(--muted); }
+.row.off { opacity: .45; }
+
+#list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.sent {
+  display: grid; grid-template-columns: 3.4em 1fr; gap: 2px 10px; align-items: baseline;
+  width: 100%; text-align: left; font: inherit; color: inherit; cursor: pointer;
+  background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px;
+  position: relative; overflow: hidden;
+  scroll-margin-top: calc(var(--vid-h) + 16px + env(safe-area-inset-top, 0px));
+  scroll-margin-bottom: calc(var(--bar-h) + 40px + env(safe-area-inset-bottom, 0px));
+}
+.sent .no { font-family: var(--mono); font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; grid-row: span 3; }
+.sent .en { font-family: var(--en); font-size: 18px; line-height: 1.5; min-width: 0; overflow-wrap: anywhere; }
+.sent .ja { font-size: 13.5px; color: var(--muted); min-width: 0; }
+.sent .tm { font-family: var(--mono); font-size: 11px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.sent.active { border-color: var(--accent); background: var(--accent-soft); }
+.sent.active .no { color: var(--accent); font-weight: 700; }
+.sent .prog { position: absolute; left: 0; bottom: 0; height: 3px; width: 0; background: var(--accent); }
+.sent.gap .prog { background: var(--turn); }
+.hide-en .sent .en { filter: blur(7px); user-select: none; }
+.hide-ja .sent .ja { display: none; }
+
+.empty { background: var(--card); border: 1px dashed var(--line); border-radius: 12px; padding: 20px; color: var(--muted); }
+
+.bar {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 5;
+  background: var(--card); border-top: 1px solid var(--line);
+  padding-top: 12px;
+  padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.bar-in { max-width: 760px; margin: 0 auto; display: grid; gap: 10px; }
+.status { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; font-size: 13px; min-height: 1.6em; }
+.status .st { font-weight: 700; color: var(--accent); }
+.status.turn .st { color: var(--turn); }
+.status .pos { font-family: var(--mono); font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.ctrls { display: flex; align-items: center; justify-content: center; gap: 14px; }
+.ctrl {
+  font: inherit; cursor: pointer; border: 1px solid var(--line); background: var(--card); color: var(--ink);
+  border-radius: 999px; width: 48px; height: 48px; display: grid; place-items: center;
+}
+.ctrl svg { width: 20px; height: 20px; fill: currentColor; }
+.ctrl.main { width: 64px; height: 64px; background: var(--accent); border-color: var(--accent); color: #fff; }
+.ctrl.main svg { width: 26px; height: 26px; }
+.ctrl:disabled { opacity: .4; cursor: default; }
+.keys { font-size: 11px; color: var(--muted); text-align: center; }
+@media (max-width: 520px) { .keys { display: none; } :root { --bar-h: 112px; } h1 { font-size: 21px; } .sent { grid-template-columns: 2.8em 1fr; } }
+</style>
+</head>
+<body>
+
+<div class="wrap" id="wrap">
+  <header>
+    <div class="eyebrow">Shadowing / Repeating with YouTube</div>
+    <h1>YouTube シャドーイング</h1>
+    <div class="pick">
+      <label for="material">教材</label>
+      <select id="material"></select>
+    </div>
+    <p class="meta" id="meta"></p>
+    <p class="credit" id="credit"></p>
+    <p class="note" id="note" hidden></p>
+  </header>
+
+  <div class="video" id="video"><div class="frame"><div id="player"></div></div></div>
+
+  <details class="settings" id="settings">
+    <summary>練習の設定</summary>
+    <div class="set-in">
+      <div class="row">
+        <span class="lab">練習の形</span>
+        <div class="seg" id="mode">
+          <button type="button" data-v="shadow">シャドーイング</button>
+          <button type="button" data-v="repeat">リピーティング</button>
+        </div>
+      </div>
+      <p class="hint" id="modeHint"></p>
+      <div class="row">
+        <span class="lab">区切りの長さ</span>
+        <div class="seg" id="unit">
+          <button type="button" data-v="1">1文</button>
+          <button type="button" data-v="2">2文</button>
+          <button type="button" data-v="3">3文</button>
+          <button type="button" data-v="15">約15秒</button>
+        </div>
+      </div>
+      <div class="row">
+        <span class="lab">速さ</span>
+        <div class="seg" id="rate"><button type="button" data-v="1">1.0</button></div>
+      </div>
+      <p class="hint">速さは YouTube が用意している段階から選びます（0.8・0.9 のような細かい刻みはありません）。</p>
+      <div class="row">
+        <span class="lab">回数</span>
+        <div class="seg" id="reps">
+          <button type="button" data-v="1">1回</button>
+          <button type="button" data-v="2">2回</button>
+          <button type="button" data-v="3">3回</button>
+          <button type="button" data-v="0">くり返す</button>
+        </div>
+      </div>
+      <div class="row" id="gapRow">
+        <span class="lab">自分の番</span>
+        <div class="seg" id="gap">
+          <button type="button" data-v="1">聞いた長さ×1</button>
+          <button type="button" data-v="1.5">×1.5</button>
+          <button type="button" data-v="2">×2</button>
+        </div>
+      </div>
+      <div class="toggles">
+        <label><input type="checkbox" id="showEn"> 英文を見せる</label>
+        <label><input type="checkbox" id="showJa"> 和訳を見せる</label>
+        <label><input type="checkbox" id="auto"> 次へ進む</label>
+      </div>
+    </div>
+  </details>
+
+  <ol id="list" aria-label="文のリスト"></ol>
+</div>
+
+<div class="bar">
+  <div class="bar-in">
+    <div class="status" id="status"><span class="st" id="st">動画を読み込んでいます</span><span class="pos" id="pos"></span></div>
+    <div class="ctrls">
+      <button class="ctrl" id="prev" type="button" aria-label="前へ"><svg viewBox="0 0 24 24"><path d="M6 5h2v14H6zM20 5v14L9 12z"/></svg></button>
+      <button class="ctrl" id="again" type="button" aria-label="もう一度"><svg viewBox="0 0 24 24"><path d="M12 5V2L7 6l5 4V7a5 5 0 1 1-5 5H5a7 7 0 1 0 7-7z"/></svg></button>
+      <button class="ctrl main" id="play" type="button" aria-label="再生"><svg viewBox="0 0 24 24" id="playIcon"><path d="M7 4v16l13-8z"/></svg></button>
+      <button class="ctrl" id="next" type="button" aria-label="次へ"><svg viewBox="0 0 24 24"><path d="M16 5h2v14h-2zM4 5v14l11-7z"/></svg></button>
+    </div>
+    <div class="keys">スペース: 再生／停止　← →: 前・次へ　R: もう一度</div>
+  </div>
+</div>
+
+<script>
+(() => {
+  const $ = (id) => document.getElementById(id);
+  const PLAY = '<path d="M7 4v16l13-8z"/>';
+  const STOP = '<path d="M6 5h4v14H6zM14 5h4v14h-4z"/>';
+  const DEFAULTS = { mode: "repeat", unit: 2, rate: 1, reps: 1, gap: 1.5, showEn: true, showJa: true, auto: true, setOpen: true };
+  const store = {
+    get(k) { try { return JSON.parse(localStorage.getItem(k)); } catch (e) { return null; } },
+    set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} },
+  };
+  const cfg = Object.assign({}, DEFAULTS, store.get("ytshadow.cfg") || {});
+
+  // YouTube の状態: -1 未開始 / 0 終了 / 1 再生中 / 2 一時停止 / 3 読み込み中 / 5 頭出し済み
+  let yt = null, ready = false, ytState = -1, rates = [1];
+  let lib = [], mat = null, units = [], idx = 0, done = 0, finished = false;
+  let phase = "idle";            // idle | audio | gap
+  let gapTimer = 0, raf = 0, poll = 0, gapStart = 0, gapLen = 0, wake = null, token = 0;
+  let seeking = false, seekAt = 0, reseeked = false, startedAt = 0, everPlayed = false, selfPause = false;
+  let lastRaw = -1, base = 0, stamp = 0;
+
+  const fmt = (s) => { s = Math.max(0, Math.round(s)); return Math.floor(s / 60) + ":" + String(s % 60).padStart(2, "0"); };
+
+  // ---- 動画の再生位置 -------------------------------------------------
+  // getCurrentTime() は飛び飛びにしか更新されないので、再生中は前回の値から経過時間で見積もる
+  function now() {
+    if (!ready) return 0;
+    const raw = yt.getCurrentTime() || 0;
+    const t = performance.now();
+    if (raw !== lastRaw) { lastRaw = raw; base = raw; stamp = t; }
+    if (ytState !== 1) { stamp = t; return base; }
+    return base + Math.min(1, (t - stamp) / 1000) * cfg.rate;
+  }
+
+  function seek(t) { seeking = true; seekAt = performance.now(); lastRaw = -1; base = t; stamp = performance.now(); yt.seekTo(t, true); }
+
+  // ---- 設定 -----------------------------------------------------------
+  function paintRates() {
+    const box = $("rate"); box.textContent = "";
+    for (const r of rates) {
+      const b = document.createElement("button");
+      b.type = "button"; b.dataset.v = String(r); b.textContent = r.toFixed(2).replace(/0$/, "");
+      box.appendChild(b);
+    }
+  }
+
+  function paintSettings() {
+    for (const [id, key] of [["mode", "mode"], ["unit", "unit"], ["rate", "rate"], ["reps", "reps"], ["gap", "gap"]]) {
+      for (const b of $(id).querySelectorAll("button")) {
+        b.setAttribute("aria-pressed", String(String(cfg[key]) === b.dataset.v));
+      }
+    }
+    $("showEn").checked = cfg.showEn; $("showJa").checked = cfg.showJa; $("auto").checked = cfg.auto;
+    document.body.classList.toggle("hide-en", !cfg.showEn);
+    document.body.classList.toggle("hide-ja", !cfg.showJa);
+    $("gapRow").classList.toggle("off", cfg.mode !== "repeat");
+    $("modeHint").textContent = cfg.mode === "repeat"
+      ? "聞いたあと、動画が止まっている間に同じ所を声に出します。"
+      : "お手本の少しあとを追いかけて、聞きながら声に出します。止まるのは、同じ所をくり返すときだけです。";
+    if (ready) yt.setPlaybackRate(cfg.rate);
+    store.set("ytshadow.cfg", cfg);
+  }
+
+  function bindSeg(id, key, num) {
+    $(id).addEventListener("click", (e) => {
+      const b = e.target.closest("button"); if (!b) return;
+      cfg[key] = num ? Number(b.dataset.v) : b.dataset.v;
+      paintSettings();
+    });
+  }
+  // 区切りの長さを変えたら、いま練習中の文を含むまとまりに移って作り直す
+  $("unit").addEventListener("click", (e) => {
+    const b = e.target.closest("button"); if (!b) return;
+    const v = Number(b.dataset.v);
+    if (v === cfg.unit) return;
+    const first = units.length ? units[idx].first : 0;
+    cfg.unit = v; paintSettings();
+    if (!mat) return;
+    stop(); buildUnits(); idx = unitOf(first); done = 0; finished = false;
+    renderList(); mark(); savePos();
+    setStatus("区切りの長さを変えました", false);
+  });
+  bindSeg("mode", "mode", false); bindSeg("rate", "rate", true); bindSeg("reps", "reps", true); bindSeg("gap", "gap", true);
+  for (const k of ["showEn", "showJa", "auto"]) $(k).addEventListener("change", () => { cfg[k] = $(k).checked; paintSettings(); });
+  $("settings").open = cfg.setOpen;
+  $("settings").addEventListener("toggle", () => { cfg.setOpen = $("settings").open; store.set("ytshadow.cfg", cfg); });
+
+  // ---- 文のリスト -----------------------------------------------------
+  function rows() { return $("list").children; }
+
+  // 隣り合う文をまとめる。N文ずつ、または約15秒（15秒を超えた所の文末で区切る）
+  function buildUnits() {
+    const segs = mat.segments, n = cfg.unit;
+    units = [];
+    let cur = null;
+    segs.forEach((s, k) => {
+      if (!cur) cur = { first: k, last: k, start: s.start, end: s.end };
+      cur.last = k; cur.end = s.end;
+      const full = n === 15 ? cur.end - cur.start >= 15 : cur.last - cur.first + 1 >= n;
+      if (full) { units.push(cur); cur = null; }
+    });
+    if (cur) units.push(cur);
+    for (const u of units) {
+      const part = segs.slice(u.first, u.last + 1);
+      u.i = u.first === u.last ? String(part[0].i) : part[0].i + "–" + part[part.length - 1].i;
+      u.text = part.map((x) => x.text).join(" ");
+      u.ja = part.map((x) => x.ja || "").filter((x) => !x.startsWith("（前の文")).join(" ");
+    }
+  }
+  function unitOf(k) { const j = units.findIndex((u) => k >= u.first && k <= u.last); return j < 0 ? 0 : j; }
+
+  function renderList() {
+    const ol = $("list"); ol.textContent = "";
+    units.forEach((s, i) => {
+      const li = document.createElement("li");
+      const b = document.createElement("button");
+      b.type = "button"; b.className = "sent"; b.dataset.i = i;
+      b.innerHTML = '<span class="no"></span><span class="en"></span><span class="ja"></span><span class="tm"></span><span class="prog"></span>';
+      b.querySelector(".no").textContent = String(s.i);
+      b.querySelector(".en").textContent = s.text;
+      b.querySelector(".ja").textContent = s.ja || "";
+      b.querySelector(".tm").textContent = fmt(s.start) + "–" + fmt(s.end) + "　" + (s.end - s.start).toFixed(1) + "秒";
+      li.appendChild(b); ol.appendChild(li);
+    });
+  }
+
+  function loadMaterial(id) {
+    stop();
+    mat = lib.find((m) => m.id === id) || lib[0];
+    done = 0; finished = false; everPlayed = false;
+    buildUnits();
+    const saved = store.get("ytshadow.pos") || {};
+    idx = saved[mat.id] != null && saved[mat.id] < mat.segments.length ? unitOf(saved[mat.id]) : 0;
+    $("material").value = mat.id;
+    $("meta").textContent = mat.segments.length + "文 · " + fmt(mat.duration) + " · " + (mat.created || "");
+    const c = $("credit"); c.textContent = "";
+    if (mat.credit) c.append("字幕: " + mat.credit + "　");
+    const a = document.createElement("a"); a.href = mat.source; a.target = "_blank"; a.rel = "noopener"; a.textContent = "YouTube で開く";
+    c.append(a);
+    renderList(); mark();
+    if (ready) { yt.cueVideoById({ videoId: mat.youtube, startSeconds: units[idx].start }); setStatus("練習する所を選ぶか、再生を押してください", false); }
+    store.set("ytshadow.last", mat.id);
+  }
+
+  function savePos() { const p = store.get("ytshadow.pos") || {}; p[mat.id] = units[idx].first; store.set("ytshadow.pos", p); }
+
+  function mark() {
+    const r = rows();
+    for (let i = 0; i < r.length; i++) {
+      const b = r[i].firstChild;
+      b.classList.toggle("active", i === idx);
+      b.classList.remove("gap");
+      b.querySelector(".prog").style.width = "0";
+    }
+    $("pos").textContent = mat ? (idx + 1) + " / " + units.length : "";
+  }
+
+  function setStatus(text, turn) { $("st").textContent = text; $("status").classList.toggle("turn", !!turn); }
+  function note(text) { $("note").hidden = !text; $("note").textContent = text || ""; }
+
+  function setPlaying(on) {
+    $("playIcon").innerHTML = on ? STOP : PLAY;
+    $("play").setAttribute("aria-label", on ? "停止" : "再生");
+    if (on && "wakeLock" in navigator && !wake) {
+      wake = "pending";
+      navigator.wakeLock.request("screen").then((w) => {
+        if (wake !== "pending") { w.release().catch(() => {}); return; }
+        wake = w; w.addEventListener("release", () => { if (wake === w) wake = null; });
+      }).catch(() => { wake = null; });
+    }
+    if (!on && wake) { if (wake !== "pending") wake.release().catch(() => {}); wake = null; }
+  }
+
+  function bar() { const r = rows()[idx]; return r ? r.firstChild : null; }
+
+  function showSeg() {
+    mark(); savePos();
+    const b = bar(); if (b) b.scrollIntoView({ block: "nearest", behavior: "smooth" });
+    const total = cfg.reps === 0 ? "" : " (" + (done + 1) + "/" + cfg.reps + ")";
+    setStatus(cfg.mode === "repeat" ? "聞く" + total : "追いかけて話す" + total, false);
+  }
+
+  // ---- 再生の流れ -----------------------------------------------------
+  function pauseSelf() { selfPause = true; yt.pauseVideo(); setTimeout(() => { selfPause = false; }, 800); }
+
+  function playSeg(i, fresh) {
+    if (!ready || !mat) return;
+    clearTimeout(gapTimer); cancelAnimationFrame(raf);
+    idx = Math.max(0, Math.min(i, units.length - 1));
+    if (fresh) done = 0;
+    finished = false;
+    showSeg();
+    phase = "audio"; setPlaying(true);
+    const my = ++token;
+    reseeked = false; startedAt = performance.now();
+    yt.setPlaybackRate(cfg.rate);
+    seek(units[idx].start);
+    yt.playVideo();
+    // iPhone などで、最初の1回は動画そのものを押さないと再生が始まらないことがある
+    setTimeout(() => {
+      if (my !== token || phase !== "audio" || ytState === 1 || ytState === 3) return;
+      note("動画が始まらないときは、動画の画面を一度押して再生を始めてください（iPhone では最初の1回だけ必要なことがあります）。始まったら、選んだ文の頭へ自動で移ります。");
+    }, 2500);
+    clearInterval(poll); poll = setInterval(check, 40);
+    raf = requestAnimationFrame(tick);
+  }
+
+  function check() {
+    if (phase !== "audio" || !ready) return;
+    const s = units[idx];
+    if (seeking) {
+      const raw = yt.getCurrentTime() || 0;
+      // 位置が届くまで待つ。広告や読み込みで時間がかかるときは1回だけ位置を指定し直す
+      if (Math.abs(raw - s.start) < 1.0 && ytState === 1) { seeking = false; lastRaw = -1; }
+      else if (!reseeked && ytState === 1 && performance.now() - seekAt > 1500) { reseeked = true; seek(s.start); }
+      else if (reseeked && ytState === 1 && performance.now() - seekAt > 4000) {
+        // 2回指定しても位置が合わないときは、流し続けずに止める
+        stop(); setStatus("文の頭へ移れませんでした。もう一度再生を押してください", false);
+      }
+      return;
+    }
+    const t = now();
+    // 位置の指定が効かなかったときの保険（文の頭より前から鳴っていたら頭へ戻す）
+    if (t < s.start - 0.8) { seek(s.start); return; }
+    const b = bar();
+    if (b) b.querySelector(".prog").style.width = Math.max(0, Math.min(100, ((t - s.start) / (s.end - s.start)) * 100)) + "%";
+    if (t >= s.end || ytState === 0) segEnd();
+  }
+
+  function tick() {
+    if (phase !== "audio") return;
+    check();
+    if (phase === "audio") raf = requestAnimationFrame(tick);
+  }
+
+  function segEnd() {
+    done++;
+    const s = units[idx];
+    const more = cfg.reps === 0 || done < cfg.reps;
+    const last = idx >= units.length - 1;
+    // シャドーイングで次の文へ進むときは、動画を止めずにそのまま流す
+    if (cfg.mode === "shadow" && !more && cfg.auto && !last && ytState !== 0) {
+      idx++; done = 0; showSeg(); return;
+    }
+    clearInterval(poll); cancelAnimationFrame(raf);
+    pauseSelf();
+    if (cfg.mode === "shadow" && !more) { endRun(last); return; }
+    // リピーティングは文の長さに合わせた「自分の番」、シャドーイングのくり返しは短い間
+    gapLen = cfg.mode === "repeat" ? ((s.end - s.start) / cfg.rate) * cfg.gap * 1000 : 600;
+    phase = "gap"; gapStart = performance.now();
+    const b = bar(); if (b) b.classList.add("gap");
+    if (cfg.mode === "repeat") setStatus("あなたの番", true);
+    const step = () => {
+      if (phase !== "gap") return;
+      const t = performance.now() - gapStart;
+      const b2 = bar();
+      if (b2) b2.querySelector(".prog").style.width = Math.max(0, 100 - (t / gapLen) * 100) + "%";
+      if (cfg.mode === "repeat") $("st").textContent = "あなたの番　" + Math.max(0, (gapLen - t) / 1000).toFixed(1) + "秒";
+      raf = requestAnimationFrame(step);
+    };
+    raf = requestAnimationFrame(step);
+    gapTimer = setTimeout(() => {
+      if (phase !== "gap") return;
+      if (more) playSeg(idx, false);
+      else if (cfg.auto && !last) playSeg(idx + 1, true);
+      else endRun(last);
+    }, gapLen);
+  }
+
+  function endRun(last) {
+    stop();
+    finished = last && cfg.auto;
+    setStatus(finished ? "最後まで終わりました。再生で最初から" : "ここまで終わりました", false);
+  }
+
+  function stop() {
+    token++;
+    clearTimeout(gapTimer); cancelAnimationFrame(raf); clearInterval(poll);
+    // 再生の命令を出した直後は状態の知らせがまだ来ていないことがあるので、練習中なら状態にかかわらず止める
+    if (ready && (phase === "audio" || ytState === 1 || ytState === 3)) pauseSelf();
+    phase = "idle"; seeking = false; setPlaying(false);
+    if (mat) mark();
+  }
+
+  // ---- YouTube プレーヤー ---------------------------------------------
+  function onState(e) {
+    ytState = e.data;
+    if (ytState === 1) {
+      everPlayed = true; note("");
+      stamp = performance.now();
+      if (phase === "idle" && !selfPause && mat) {
+        // 動画の画面から直接再生したときは、いま選んでいる文から練習を始める
+        playSeg(idx, true);
+      }
+    }
+    if (ytState === 2 && phase === "audio" && !selfPause && !seeking) {
+      // 動画の画面で一時停止したときは、練習も止める
+      stop(); setStatus("止めました", false);
+    }
+  }
+
+  function onError(e) {
+    stop();
+    const msg = { 2: "動画の指定が正しくありません", 5: "このブラウザでは再生できない動画です", 100: "動画が見つかりません（削除・非公開の可能性）", 101: "この動画は、ほかのサイトでの再生が許可されていません", 150: "この動画は、ほかのサイトでの再生が許可されていません" }[e.data] || "動画を再生できませんでした";
+    setStatus(msg, false); note(msg + "。別の教材を選んでください。");
+  }
+
+  window.onYouTubeIframeAPIReady = () => {
+    const first = mat || null;
+    yt = new YT.Player("player", {
+      videoId: first ? first.youtube : "",
+      playerVars: { playsinline: 1, rel: 0, start: first ? Math.floor(units[idx].start) : 0, enablejsapi: 1 },
+      events: {
+        onReady: () => {
+          ready = true;
+          const avail = (yt.getAvailablePlaybackRates() || [1]).filter((r) => r >= 0.5 && r <= 1.5);
+          rates = avail.length ? avail : [1];
+          if (!rates.includes(cfg.rate)) cfg.rate = rates.reduce((a, r) => Math.abs(r - cfg.rate) < Math.abs(a - cfg.rate) ? r : a, 1);
+          paintRates(); paintSettings();
+          if (mat) setStatus("練習する所を選ぶか、再生を押してください", false);
+        },
+        onStateChange: onState,
+        onError,
+      },
+    });
+  };
+
+  // ---- 操作 -----------------------------------------------------------
+  $("play").addEventListener("click", () => {
+    if (!mat || !ready) return;
+    if (phase === "idle") { playSeg(finished ? 0 : idx, true); } else { stop(); setStatus("止めました", false); }
+  });
+  $("prev").addEventListener("click", () => { if (mat) playSeg(idx - 1, true); });
+  $("next").addEventListener("click", () => { if (mat) playSeg(idx + 1, true); });
+  $("again").addEventListener("click", () => { if (mat) playSeg(idx, true); });
+  $("list").addEventListener("click", (e) => { const b = e.target.closest(".sent"); if (b) playSeg(Number(b.dataset.i), true); });
+  $("material").addEventListener("change", (e) => loadMaterial(e.target.value));
+
+  document.addEventListener("keydown", (e) => {
+    if (!mat || e.metaKey || e.ctrlKey || e.altKey) return;
+    const tag = (e.target.tagName || "").toLowerCase();
+    if (tag === "select" || tag === "input" || tag === "summary") return;
+    if (e.code === "Space") { e.preventDefault(); $("play").click(); }
+    else if (e.key === "ArrowLeft") { e.preventDefault(); $("prev").click(); }
+    else if (e.key === "ArrowRight") { e.preventDefault(); $("next").click(); }
+    else if (e.key === "r" || e.key === "R") { $("again").click(); }
+  });
+
+  // 動画の高さに合わせて、文へ移ったときに動画の下に隠れないようにする
+  if ("ResizeObserver" in window) new ResizeObserver(() => {
+    document.documentElement.style.setProperty("--vid-h", $("video").offsetHeight + "px");
+  }).observe($("video"));
+
+  // 動作確認用（?debug を付けて開いたときだけ）
+  if (/[?&]debug\b/.test(location.search)) window.__dbg = () => ({ t: ready ? yt.getCurrentTime() : null, ytState, phase, idx, unit: units[idx] && [units[idx].start, units[idx].end] });
+
+  if (location.protocol === "file:") note("このページはファイルを直接開くと動画が再生できません。公開したリンクから開いてください。");
+
+  paintSettings();
+  fetch("library.json", { cache: "no-cache" }).then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); }).then((data) => {
+    lib = data.materials || [];
+    if (!lib.length) throw new Error("empty");
+    const sel = $("material");
+    for (const m of lib) { const o = document.createElement("option"); o.value = m.id; o.textContent = m.title; sel.appendChild(o); }
+    const last = store.get("ytshadow.last");
+    loadMaterial(lib.some((m) => m.id === last) ? last : lib[0].id);
+    // 教材が決まってから YouTube の部品を読み込む
+    const s = document.createElement("script"); s.src = "https://www.youtube.com/iframe_api";
+    s.onerror = () => { setStatus("動画の部品を読み込めませんでした", false); note("YouTube につながりませんでした。通信を確かめて、ページを開き直してください。"); };
+    document.head.appendChild(s);
+    setTimeout(() => { if (!ready) note("動画の読み込みに時間がかかっています。しばらく待っても変わらなければ、ページを開き直してください。"); }, 15000);
+  }).catch(() => {
+    $("list").innerHTML = '<li class="empty">教材を読み込めませんでした。ページを開き直してください。</li>';
+    setStatus("教材がありません", false);
+  });
+})();
+</script>
+</body>
+</html>
