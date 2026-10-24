@@ -369,6 +369,7 @@ details.settings[open] summary::after { content: "閉じる"; }
     renderList(); mark();
     if (ready) { yt.cueVideoById({ videoId: mat.youtube, startSeconds: units[idx].start }); setStatus("練習する所を選ぶか、再生を押してください", false); }
     store.set("ytshadow.last", mat.id);
+    try { history.replaceState(null, "", "#" + encodeURIComponent(mat.id)); } catch (e) {}
   }
 
   function savePos() { const p = store.get("ytshadow.pos") || {}; p[mat.id] = units[idx].first; store.set("ytshadow.pos", p); }
@@ -591,8 +592,10 @@ details.settings[open] summary::after { content: "閉じる"; }
     if (!lib.length) throw new Error("empty");
     const sel = $("material");
     for (const m of lib) { const o = document.createElement("option"); o.value = m.id; o.textContent = m.title; sel.appendChild(o); }
+    // リンクの末尾に #教材ID があれば、その教材を開く（Slack の完了報告のリンク）。無ければ前回の教材
+    let want = ""; try { want = decodeURIComponent(location.hash.slice(1)); } catch (e) {}
     const last = store.get("ytshadow.last");
-    loadMaterial(lib.some((m) => m.id === last) ? last : lib[0].id);
+    loadMaterial(lib.some((m) => m.id === want) ? want : lib.some((m) => m.id === last) ? last : lib[0].id);
     // 教材が決まってから YouTube の部品を読み込む
     const s = document.createElement("script"); s.src = "https://www.youtube.com/iframe_api";
     s.onerror = () => { setStatus("動画の部品を読み込めませんでした", false); note("YouTube につながりませんでした。通信を確かめて、ページを開き直してください。"); };
